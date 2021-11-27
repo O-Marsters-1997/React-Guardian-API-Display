@@ -3,8 +3,12 @@ import ArticleList from '../components/ArticleList';
 import ArticleForm from '../components/ArticleForm'
 import ArticleHeader from '../components/ArticleHeader';
 
+
+
 const ArticleContainer = () => {
 
+    require('dotenv').config();
+    const API = process.env.REACT_APP_GUARDIAN_API_KEY;
     const[search, setSearch] = useState('')
     const [newsArticles, setNewsArticles] = useState([])
     const [isValid, setIsValid] = useState(true);
@@ -21,7 +25,7 @@ const ArticleContainer = () => {
 
     const getNewsArticles = () => {
         if (search != '') {
-            fetch(`https://content.guardianapis.com/search?q=${search}&format=json&api-key=test`)
+            fetch(`https://content.guardianapis.com/search?q=${search}&format=json&api-key=${API}`)
             .then(response => response.json())
             .then(data => setNewsArticles(data.response.results))
             .catch(err => console.error)
