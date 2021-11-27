@@ -9,9 +9,9 @@ const ArticleList = ({articles}) => {
     }) 
 
     return (
-        <div>
+        <ol>
             {article}
-        </div>
+        </ol>
     )
 }
 
