@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/style.css';
 import ArticleContainer from './containers/ArticleContainer';
 
 function App() {
