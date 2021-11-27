@@ -25,7 +25,7 @@ const ArticleContainer = () => {
 
     const getNewsArticles = () => {
         if (search != '') {
-            fetch(`https://content.guardianapis.com/search?q=${search}&format=json&api-key=${API}`)
+            fetch(`https://content.guardianapis.com/search?page-size=200&q=${search}&format=json&api-key=${API}`)
             .then(response => response.json())
             .then(data => setNewsArticles(data.response.results))
             .catch(err => console.error)
@@ -38,7 +38,7 @@ const ArticleContainer = () => {
             <ArticleHeader/>
             <main className="main-content">
                 <ArticleForm onSearchSubmit ={(submiitedSearch)=>getSearch(submiitedSearch)} isValid = {isValid}/>
-                <ArticleList articles = {newsArticles.sort((a, b) => b.webPublicationDate - a.webPublicationDate).slice(0, 10)}/>
+                <ArticleList articles = {newsArticles.sort((a, b) => b.webPublicationDate - a.webPublicationDate).slice(0, 25)}/>
             </main>
             <div className="footer"></div>
         </div>
