@@ -9,7 +9,7 @@ const ArticleContainer = () => {
 
     useEffect(() =>{
         getNewsArticles()
-    })
+    }, [search])
 
     const getSearch = (submittedSearch) => {
         setSearch(submittedSearch)
@@ -29,7 +29,7 @@ const ArticleContainer = () => {
     return (
         <div>
             <ArticleForm onSearchSubmit ={(submiitedSearch)=>getSearch(submiitedSearch)} />
-            <ArticleList articles = {newsArticles}/>
+            <ArticleList articles = {newsArticles.sort((a, b) => b.webPublicationDate - a.webPublicationDate).slice(0, 10)}/>
         </div>
     )
 }
