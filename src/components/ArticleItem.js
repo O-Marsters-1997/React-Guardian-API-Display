@@ -11,11 +11,15 @@ const ArticleItem = ({article}) => {
     
 
     return (
-        <li>
-            <span>{article.webTitle}</span>
-            {console.log(article.webPublicationDate)}
+        <li className="response-list-item">
+            <span className="result-title">{article.webTitle}</span>
+            <br/>
+            {/* {console.log(article.webPublicationDate)} */}
             <span>{dateConversion(article.webPublicationDate)}</span>
-            <a href = {article.webUrl}>Read the entire article at this link</a>
+            <br/>
+            <a href = {article.webUrl} target="_blank">Read the entire article at this link
+                <div className="link-border"></div>
+            </a>
         </li>
         
     )

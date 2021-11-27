@@ -1,0 +1,49 @@
+@use '../base' as *;
+
+.response-list-item {
+    background: $background-primary-modifier;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    border-radius: 20px;
+    box-shadow: 1px 1px $background-primary-modifier-enhanced;
+    line-height: 1.75em;
+    font-family: "Noto Serif", georgia, arial, helvetica, sans-serif;
+
+    & .result-title {
+        font-weight: bold;
+    }
+
+    & a {
+        position: relative;
+        color: black;
+        text-decoration: none;
+        transition-property: all;
+        transition-duration: .6s;
+
+    }
+
+    & a:hover {
+        font-weight: bold;
+        font-style: italic;
+        color: $text-alternate;
+
+        & .link-border {
+            width: 100%;
+        }
+}
+
+    &:first-child {
+        margin-top: 1.5em;
+    }
+
+}
+
+.link-border {
+    left: 0%;
+    position: absolute;
+    background-color: $text-alternate;
+    height: 2px;
+    width: 0%;
+    transition-property: all;
+    transition: .55s ease-in;
+}

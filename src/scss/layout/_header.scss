@@ -1,0 +1,58 @@
+@use '../base/' as *;
+
+.header {
+    padding: 1.5em;
+    width: 100vw;
+    background-color: $background-primary;
+    color: white;
+    font-family: 'Guardian Egyptian Web Bold';
+
+    & .navigation {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    & ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .nav-list-item {
+            font-variant: small-caps;
+        }
+    }
+
+    & .title-wrapper {
+        margin-right: auto;
+
+        & h2 {
+            padding-top: .65em;
+            font-size: 1.9rem;
+        }
+
+        & .title-caption {
+            margin-top: .75em;
+           color: $text-modifier;
+           text-align: center;
+           font-family: georgia, arial, helvetica, sans-serif;
+           font-weight: 600;
+
+        }
+    }
+
+    & .nav-list-item {
+        list-style:none;
+        padding: 0 1.5em;
+        position: relative;
+        cursor: pointer;
+
+        & .link-border {
+            background-color: white;
+            margin-top: 5px;
+        }
+
+        &:hover .link-border {
+            width: 100%;
+        }
+    }
+}

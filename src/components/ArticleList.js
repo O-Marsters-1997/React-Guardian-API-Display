@@ -9,7 +9,7 @@ const ArticleList = ({articles}) => {
     }) 
 
     return (
-        <ol>
+        <ol className="form-item-grid">
             {article}
         </ol>
     )

@@ -1,5 +1,133 @@
-body {
-  background: red;
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Guardian Egyptian Web Bold";
+  src: url("../fonts/Guardian_Egyptian_Web_Bold_Regular.woff") format("woff"), url("../fonts/Guardian_Egyptian_Web_Bold_Regular.ttf") format("ttf");
+}
+.header {
+  padding: 1.5em;
+  width: 100vw;
+  background-color: #052962;
+  color: white;
+  font-family: "Guardian Egyptian Web Bold";
+}
+.header .navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header ul .nav-list-item {
+  font-variant: small-caps;
+}
+.header .title-wrapper {
+  margin-right: auto;
+}
+.header .title-wrapper h2 {
+  padding-top: 0.65em;
+  font-size: 1.9rem;
+}
+.header .title-wrapper .title-caption {
+  margin-top: 0.75em;
+  color: #ffe500;
+  text-align: center;
+  font-family: georgia, arial, helvetica, sans-serif;
+  font-weight: 600;
+}
+.header .nav-list-item {
+  list-style: none;
+  padding: 0 1.5em;
+  position: relative;
+  cursor: pointer;
+}
+.header .nav-list-item .link-border {
+  background-color: white;
+  margin-top: 5px;
+}
+.header .nav-list-item:hover .link-border {
+  width: 100%;
+}
+
+.form-wrapper {
+  text-align: center;
+  margin-top: 7.5em;
+}
+.form-wrapper h1 {
+  font-family: "Guardian Egyptian Web Bold", georgia, arial, helvetica, sans-serif;
+  padding-bottom: 1.25em;
+  font-size: 2.2rem;
+}
+
+.form input {
+  height: 30px;
+  text-align: center;
+  margin-right: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #686666;
+}
+.form input:nth-child(2) {
+  background-color: #052962;
+  color: white;
+}
+
+.footer {
+  height: 10vh;
+  width: 100vw;
+  background-color: #052962;
+  margin-top: 4.5em;
+}
+
+.response-list-item {
+  background: #f6f6f6;
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  border-radius: 20px;
+  box-shadow: 1px 1px #686666;
+  line-height: 1.75em;
+  font-family: "Noto Serif", georgia, arial, helvetica, sans-serif;
+}
+.response-list-item .result-title {
+  font-weight: bold;
+}
+.response-list-item a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  transition-property: all;
+  transition-duration: 0.6s;
+}
+.response-list-item a:hover {
+  font-weight: bold;
+  font-style: italic;
+  color: #7e7b7b;
+}
+.response-list-item a:hover .link-border {
+  width: 100%;
+}
+.response-list-item:first-child {
+  margin-top: 1.5em;
+}
+
+.link-border {
+  left: 0%;
+  position: absolute;
+  background-color: #7e7b7b;
+  height: 2px;
+  width: 0%;
+  transition-property: all;
+  transition: 0.55s ease-in;
+}
+
+.main-content {
+  min-height: 100vh;
+  max-width: 85%;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
