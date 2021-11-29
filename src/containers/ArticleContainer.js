@@ -16,35 +16,41 @@ const ArticleContainer = () => {
     
     const firstUpdate = useRef(true);
     useEffect(() =>{
-        if (firstUpdate.current) {
+        getNewsArticles()
+        
+        // if (newsArticles.length == 0) {
+        //         setIsValid(false)
+        //     }
+    }, [search])
+
+    useEffect(() => {
+         if (firstUpdate.current) {
             firstUpdate.current = false;
             setCount(count + 1);
             return;
         }
-        getNewsArticles()
         const listul = document.getElementsByClassName('form-item-grid')[0]
         console.log(listul)
         if (listul.innerHTML == '') {
             setIsValid(false)
         }
-        // if (newsArticles.length == 0) {
-        //         setIsValid(false)
-        //     }
-    }, [search])
+    }, [newsArticles])
 
     const getSearch = (submittedSearch) => {
         setSearch(submittedSearch)
     }
 
 
-    const getNewsArticles = () => {
+    const getNewsArticles = async () => {
         if (search != '') {
-            fetch(`https://content.guardianapis.com/search?page-size=200&q=${search}&format=json&api-key=c70cf907-5664-49f9-8191-46612e9a2110`)
+            const response = await fetch(`https://content.guardianapis.com/search?page-size=200&q=${search}&format=json&api-key=c70cf907-5664-49f9-8191-46612e9a2110`)
+            // const data = await response.json();
+            // setNewsArticles(data.response.results)
+
             .then(response => response.json())
             .then(data => setNewsArticles(data.response.results))
-            .then(data => setNewsArticles)
             
-            // .catch(err => console.error(err))
+            .catch(err => console.error(err))
             }
         
     }
