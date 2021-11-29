@@ -17,10 +17,6 @@ const ArticleContainer = () => {
     const firstUpdate = useRef(true);
     useEffect(() =>{
         getNewsArticles()
-        
-        // if (newsArticles.length == 0) {
-        //         setIsValid(false)
-        //     }
     }, [search])
 
     useEffect(() => {

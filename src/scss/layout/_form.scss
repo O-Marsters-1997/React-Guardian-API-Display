@@ -27,3 +27,23 @@
         color: white;
     } 
 }
+
+.form-wrapper {
+    background-color: $background-primary;
+    width: 60%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1.5em 0;
+    border-radius: 30px;
+
+    & h1 {
+        color: white;
+    }
+
+}
+
+.form-text {
+    padding-bottom: 1.5em;
+    color: $text-modifier;
+}
