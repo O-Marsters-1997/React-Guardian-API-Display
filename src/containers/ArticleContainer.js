@@ -33,6 +33,8 @@ const ArticleContainer = () => {
         console.log(listul)
         if (listul.innerHTML == '') {
             setIsValid(false)
+        } else {
+            setIsValid(true)
         }
     }, [newsArticles])
 
